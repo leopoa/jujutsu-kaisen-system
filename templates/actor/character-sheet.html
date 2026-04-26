@@ -1,0 +1,251 @@
+<form class="jujutsu-character-sheet" autocomplete="off">
+  <div class="sheet-header">
+    <div class="header-top">
+      <div class="avatar-section">
+        <div class="avatar-container">
+          <img src="{{actor.img}}" alt="Avatar" class="avatar-image" title="Clique para mudar o avatar" />
+          <div class="level-badge">
+            <span class="level-text">{{system.information.level}}</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <nav class="sheet-tabs tabs" data-group="primary">
+      <button class="item" data-tab="inventory" data-tooltip="Inventário">
+        <i class="fas fa-backpack"></i>
+      </button>
+      <!-- <button class="item" data-tab="combat" data-tooltip="Combate">
+        <i class="fas fa-sword"></i>
+      </button> -->
+      <button class="item" data-tab="spells" data-tooltip="Magias">
+        <i class="fas fa-wand-magic-sparkles"></i>
+      </button>
+      <button class="item" data-tab="attributes" data-tooltip="Status">
+        <i class="fas fa-chart-line"></i>
+      </button>
+      <button class="item" data-tab="information" data-tooltip="Informações">
+        <i class="fas fa-id-card"></i>
+      </button>
+      <button class="item" data-tab="biography" data-tooltip="Biografia">
+        <i class="fas fa-book"></i>
+      </button>
+      <!-- <button class="item" data-tab="settings" data-tooltip="Configurações">
+        <i class="fas fa-cog"></i>
+      </button> -->
+    </nav>
+  </div>
+
+  <section class="sheet-body">
+    <!-- INVENTORY TAB -->
+    <div class="tab" data-tab="inventory">
+      <div class="inventory-header">
+        <h2>Inventário</h2>
+        <button type="button" class="add-item-btn" data-item-type="equipment">
+          <i class="fas fa-plus"></i> Adicionar Item
+        </button>
+      </div>
+
+      <div class="item-list equipment-list">
+        {{#each items.equipment}}
+          <div class="item-row" data-item-id="{{this._id}}">
+            <div class="item-icon">
+              <img src="{{this.img}}" alt="{{this.name}}" />
+            </div>
+            <div class="item-info">
+              <h4 class="item-name">{{this.name}}</h4>
+              <p class="item-quantity">Qtd: {{this.system.quantity}}</p>
+            </div>
+            <div class="item-actions">
+              <!-- <button type="button" class="item-equip" title="Equipar">
+                <i class="fas {{#if this.system.equipped}}fa-check-circle{{else}}fa-circle{{/if}}"></i>
+              </button> -->
+              <button type="button" class="item-edit" title="Editar">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button type="button" class="item-delete" title="Remover">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        {{else}}
+          <div class="empty-state">
+            <p>Nenhum item no inventário</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <!-- COMBAT TAB -->
+    <div class="tab" data-tab="combat">
+      <div class="combat-header">
+        <h2>Equipamento em Combate</h2>
+      </div>
+
+      <div class="item-list equipped-list">
+        {{#each items.equipped}}
+          <div class="item-row equipped" data-item-id="{{this._id}}">
+            <div class="item-icon">
+              <img src="{{this.img}}" alt="{{this.name}}" />
+            </div>
+            <div class="item-info">
+              <h4 class="item-name">{{this.name}}</h4>
+              <p class="item-type">{{this.type}}</p>
+            </div>
+            <div class="item-stats">
+              {{#if (eq this.type "weapon")}}
+                <span class="stat-label">Dano:</span>
+                <span class="stat-value">{{this.system.damage}}</span>
+              {{/if}}
+              {{#if (eq this.type "equipment")}}
+                <span class="stat-label">Armadura:</span>
+                <span class="stat-value">{{this.system.armor}}</span>
+              {{/if}}
+            </div>
+          </div>
+        {{else}}
+          <div class="empty-state">
+            <p>Nenhum item equipado</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <!-- SPELLS TAB -->
+    <div class="tab" data-tab="spells">
+      <div class="spells-header">
+        <h2>Magias</h2>
+        <button type="button" class="add-item-btn" data-item-type="spell">
+          <i class="fas fa-plus"></i> Adicionar Magia
+        </button>
+      </div>
+
+      <div class="item-list spells-list">
+        {{#each items.spells}}
+          <div class="item-row spell" data-item-id="{{this._id}}">
+            <div class="item-icon">
+              <img src="{{this.img}}" alt="{{this.name}}" />
+            </div>
+            <div class="item-info">
+              <h4 class="item-name">{{this.name}}</h4>
+              <p class="spell-level">Level {{this.system.level}}</p>
+            </div>
+            
+            <div class="item-actions">
+              <!-- <button type="button" class="item-equip" title="Equipar">
+                <i class="fas {{#if this.system.equipped}}fa-check-circle{{else}}fa-circle{{/if}}"></i>
+              </button> -->
+              <button type="button" class="item-edit" title="Editar">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button type="button" class="item-delete" title="Remover">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        {{else}}
+          <div class="empty-state">
+            <p>Nenhuma magia adicionada</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <!-- ATTRIBUTES TAB -->
+    <div class="tab" data-tab="attributes">
+      <div class="info-grid">
+        <div class="info-field">
+          <label class="attribute-label">Pontos de Vida</label>
+          <input type="number" class="editable attribute-input" data-field="system.health.max" value="{{system.health.max}}" /> 
+        </div>
+        <div class="info-field">
+          <label class="attribute-label">Força</label>
+          <input type="number" class="editable attribute-input" data-field="system.attributes.strength" value="{{system.attributes.strength}}" />
+        </div>
+        <div class="info-field">
+          <label class="attribute-label">Agilidade</label>
+          <input type="number" class="editable attribute-input" data-field="system.attributes.agility" value="{{system.attributes.agility}}" />
+        </div>
+        <div class="info-field">
+          <label class="attribute-label">Vigor</label>
+          <input type="number" class="editable attribute-input" data-field="system.attributes.vigor" value="{{system.attributes.vigor}}" />
+        </div>
+        <div class="info-field">
+          <label class="attribute-label">Destreza</label>
+          <input type="number" class="editable attribute-input" data-field="system.attributes.dexterity" value="{{system.attributes.dexterity}}" />
+        </div>
+        <div class="info-field">
+          <label class="attribute-label">Percepção</label>
+          <input type="number" class="editable attribute-input" data-field="system.attributes.perception" value="{{system.attributes.perception}}" />
+        </div>
+        <div class="info-field">
+          <label class="attribute-label">Inteligência</label>
+          <input type="number" class="editable attribute-input" data-field="system.attributes.intelligence" value="{{system.attributes.intelligence}}" />
+        </div>
+        <div class="info-field">
+          <label class="attribute-label">Jujutsu</label>
+          <input type="number" class="editable attribute-input" data-field="system.attributes.jujutsu" value="{{system.attributes.jujutsu}}" />
+        </div>
+        <div class="info-field">
+          <label class="attribute-label">Vontade</label>
+          <input type="number" class="editable attribute-input" data-field="system.attributes.willpower" value="{{system.attributes.willpower}}" />
+        </div>
+      </div>
+    </div>
+
+    <!-- INFORMATION TAB -->
+    <div class="tab" data-tab="information">
+      <div class="info-grid">
+        <div class="info-field">
+          <label>Nome</label>
+          <input type="text" class="editable" data-field="system.information.name" value="{{system.information.name}}" />
+        </div>
+        <div class="info-field">
+          <label>Level</label>
+          <input type="number" class="editable" data-field="system.information.level" value="{{system.information.level}}" />
+        </div>
+        <div class="info-field">
+          <label>Idade</label>
+          <input type="text" class="editable" data-field="system.information.age" value="{{system.information.age}}" />
+        </div>
+        <div class="info-field">
+          <label>Gênero</label>
+          <input type="text" class="editable" data-field="system.information.gender" value="{{system.information.gender}}" />
+        </div>
+        <div class="info-field">
+          <label>Cargo</label>
+          <input type="text" class="editable" data-field="system.information.position" value="{{system.information.position}}" />
+        </div>
+        <div class="info-field">
+          <label>Grau</label>
+          <input type="text" class="editable" data-field="system.information.grade" value="{{system.information.grade}}" />
+        </div>
+        <div class="info-field full-width">
+          <label>Clã</label>
+          <input type="text" class="editable" data-field="system.information.clan" value="{{system.information.clan}}" />
+        </div>
+      </div>
+    </div>
+
+    <!-- BIOGRAPHY TAB -->
+    <div class="tab" data-tab="biography">
+      <div class="biography-section">
+        <h2>Biografia</h2>
+        <textarea class="biography-editor" data-field="system.biography" placeholder="Escreva a história do seu personagem aqui...">{{system.biography}}</textarea>
+      </div>
+    </div>
+
+    <!-- SETTINGS TAB 
+    <div class="tab" data-tab="settings">
+      <div class="settings-section">
+        <h2>Configurações</h2>
+        <div class="setting-group">
+          <label>Imagem do Avatar</label>
+          <input type="text" class="editable" data-field="img" value="{{actor.img}}" placeholder="URL da imagem" />
+          <p class="setting-hint">Clique no avatar para selecionar uma imagem</p>
+        </div>
+      </div>
+    </div> -->
+  </section>
+</form>

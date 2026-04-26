@@ -1,0 +1,155 @@
+<form class="jujutsu-item-sheet" autocomplete="off">
+  <div class="sheet-header">
+    <div class="header-row">
+      <h1 class="item-name" contenteditable="true">{{item.name}}</h1>
+      <span class="item-type-badge">{{item.type}}</span>
+    </div>
+  </div>
+
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <button class="item" data-tab="details">Detalhes</button>
+    <button class="item" data-tab="description">Descrição</button>
+  </nav>
+
+  <section class="sheet-body">
+    <!-- DETAILS TAB -->
+    <div class="tab" data-tab="details">
+      {{#if (eq type "equipment")}}
+        <div class="field-group">
+          <label>Quantidade</label>
+          <input type="number" class="editable" data-field="system.quantity" value="{{system.quantity}}" />
+        </div>
+        <div class="field-group">
+          <label>Peso</label>
+          <input type="number" class="editable" data-field="system.weight" value="{{system.weight}}" />
+        </div>
+        <div class="field-group">
+          <label>Valor</label>
+          <input type="number" class="editable" data-field="system.value" value="{{system.value}}" />
+        </div>
+        <div class="field-group">
+          <label>Raridade</label>
+          <select class="editable" data-field="system.rarity">
+            <option value="common" {{#if (eq system.rarity "common")}}selected{{/if}}>Comum</option>
+            <option value="uncommon" {{#if (eq system.rarity "uncommon")}}selected{{/if}}>Incomum</option>
+            <option value="rare" {{#if (eq system.rarity "rare")}}selected{{/if}}>Raro</option>
+            <option value="legendary" {{#if (eq system.rarity "legendary")}}selected{{/if}}>Lendário</option>
+            <option value="mythic" {{#if (eq system.rarity "mythic")}}selected{{/if}}>Mítico</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>Armadura</label>
+          <input type="number" class="editable" data-field="system.armor" value="{{system.armor}}" />
+        </div>
+        <div class="field-group">
+          <label>Efeitos</label>
+          <input type="text" class="editable" data-field="system.effects" value="{{system.effects}}" />
+        </div>
+      {{/if}}
+
+      {{#if (eq type "spell")}}
+        <div class="field-group">
+          <label>Level</label>
+          <input type="number" class="editable" data-field="system.level" value="{{system.level}}" min="1" max="10" />
+        </div>
+        <div class="field-group">
+          <label>Custo</label>
+          <input type="number" class="editable" data-field="system.cost" value="{{system.cost}}" />
+        </div>
+        <div class="field-group">
+          <label>Tempo de Lançamento</label>
+          <input type="text" class="editable" data-field="system.castingTime" value="{{system.castingTime}}" />
+        </div>
+        <div class="field-group">
+          <label>Alcance</label>
+          <input type="text" class="editable" data-field="system.range" value="{{system.range}}" />
+        </div>
+        <div class="field-group">
+          <label>Duração</label>
+          <input type="text" class="editable" data-field="system.duration" value="{{system.duration}}" />
+        </div>
+        <div class="field-group">
+          <label>Componentes</label>
+          <input type="text" class="editable" data-field="system.components" value="{{system.components}}" />
+        </div>
+        <div class="field-group">
+          <label>Dano</label>
+          <input type="number" class="editable" data-field="system.damage" value="{{system.damage}}" />
+        </div>
+        <div class="field-group">
+          <label>Tipo de Dano</label>
+          <input type="text" class="editable" data-field="system.damageType" value="{{system.damageType}}" />
+        </div>
+        <div class="field-group">
+          <label>Teste de Resistência</label>
+          <input type="text" class="editable" data-field="system.savingThrow" value="{{system.savingThrow}}" />
+        </div>
+        <div class="field-group">
+          <label>Escola</label>
+          <input type="text" class="editable" data-field="system.school" value="{{system.school}}" />
+        </div>
+      {{/if}}
+
+      {{#if (eq type "weapon")}}
+        <div class="field-group">
+          <label>Dano</label>
+          <input type="number" class="editable" data-field="system.damage" value="{{system.damage}}" />
+        </div>
+        <div class="field-group">
+          <label>Tipo de Dano</label>
+          <select class="editable" data-field="system.damageType">
+            <option value="corte" {{#if (eq system.damageType "corte")}}selected{{/if}}>Corte</option>
+            <option value="perfuracao" {{#if (eq system.damageType "perfuracao")}}selected{{/if}}>Perfuração</option>
+            <option value="impacto" {{#if (eq system.damageType "impacto")}}selected{{/if}}>Impacto</option>
+            <option value="magico" {{#if (eq system.damageType "magico")}}selected{{/if}}>Mágico</option>
+            <option value="fogo" {{#if (eq system.damageType "fogo")}}selected{{/if}}>Fogo</option>
+            <option value="gelo" {{#if (eq system.damageType "gelo")}}selected{{/if}}>Gelo</option>
+            <option value="eletricidade" {{#if (eq system.damageType "eletricidade")}}selected{{/if}}>Eletricidade</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>Peso</label>
+          <input type="number" class="editable" data-field="system.weight" value="{{system.weight}}" />
+        </div>
+        <div class="field-group">
+          <label>Valor</label>
+          <input type="number" class="editable" data-field="system.value" value="{{system.value}}" />
+        </div>
+        <div class="field-group">
+          <label>Raridade</label>
+          <select class="editable" data-field="system.rarity">
+            <option value="common" {{#if (eq system.rarity "common")}}selected{{/if}}>Comum</option>
+            <option value="uncommon" {{#if (eq system.rarity "uncommon")}}selected{{/if}}>Incomum</option>
+            <option value="rare" {{#if (eq system.rarity "rare")}}selected{{/if}}>Raro</option>
+            <option value="legendary" {{#if (eq system.rarity "legendary")}}selected{{/if}}>Lendário</option>
+            <option value="mythic" {{#if (eq system.rarity "mythic")}}selected{{/if}}>Mítico</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>Alcance</label>
+          <input type="text" class="editable" data-field="system.range" value="{{system.range}}" />
+        </div>
+        <div class="field-group">
+          <label>Intervalo Crítico</label>
+          <input type="number" class="editable" data-field="system.criticalRange" value="{{system.criticalRange}}" min="1" max="20" />
+        </div>
+        <div class="field-group">
+          <label>Multiplicador Crítico</label>
+          <input type="number" class="editable" data-field="system.criticalMultiplier" value="{{system.criticalMultiplier}}" min="1" step="0.5" />
+        </div>
+        <div class="field-group">
+          <label>Propriedades</label>
+          <input type="text" class="editable" data-field="system.properties" value="{{system.properties}}" />
+        </div>
+      {{/if}}
+    </div>
+
+    <!-- DESCRIPTION TAB -->
+    <div class="tab" data-tab="description">
+      <div class="field-group full-width">
+        <label>Descrição</label>
+        <textarea class="editable" data-field="system.description" placeholder="Descreva o item aqui...">{{system.description}}</textarea>
+      </div>
+    </div>
+  </section>
+</form>

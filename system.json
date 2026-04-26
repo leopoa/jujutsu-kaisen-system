@@ -1,0 +1,84 @@
+{
+  "id": "jujutsu-kaisen-system",
+  "title": "Jujutsu Kaisen RPG System",
+  "description": "Jujutsu Kaisen universe",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": 13,
+    "verified": 13,
+    "maximum": 13
+  },
+  "authors": [
+    {
+      "name": "LEONARDO AMARILHO"
+    }
+  ],
+  "url": "https://github.com/manus-ai/jujutsu-kaisen-system",  
+  "changelog": "https://github.com/manus-ai/jujutsu-kaisen-system/releases",  
+  "manifest": "https://github.com/manus-ai/jujutsu-kaisen-system/raw/main/system.json",
+  "download": "https://github.com/manus-ai/jujutsu-kaisen-system/archive/refs/heads/main.zip",
+  "primaryTokenAttribute": "attributes.hp",
+  "documentTypes": {
+    "Actor": {
+      "character": {
+        "htmlForm": "systems/jujutsu-kaisen-system/templates/actor/character-sheet.html",
+        "dataModels": {
+          "character": "systems/jujutsu-kaisen-system/module/data/actor/character.js"
+        }
+      }
+    },
+    "Item": {
+      "equipment": {
+        "htmlForm": "systems/jujutsu-kaisen-system/templates/item/item-sheet.html",
+        "dataModels": {
+          "equipment": "systems/jujutsu-kaisen-system/module/data/item/equipment.js"
+        }
+      },
+      "spell": {
+        "htmlForm": "systems/jujutsu-kaisen-system/templates/item/item-sheet.html",
+        "dataModels": {
+          "spell": "systems/jujutsu-kaisen-system/module/data/item/spell.js"
+        }
+      },
+      "weapon": {
+        "htmlForm": "systems/jujutsu-kaisen-system/templates/item/item-sheet.html",
+        "dataModels": {
+          "weapon": "systems/jujutsu-kaisen-system/module/data/item/weapon.js"
+        }
+      }
+    }
+  },
+  "Actor": {
+    "types": ["character"],
+    "typeLabels": {
+      "character": "Personagem"
+    }
+  },
+  "Item": {
+    "types": ["equipment", "spell", "weapon"],
+    "typeLabels": {
+      "equipment": "Equipamento",
+      "spell": "Magia",
+      "weapon": "Arma"
+    }
+  },
+  "esmodules": [
+    "module/jujutsu-system.js"
+  ],
+  "styles": [
+    "styles/jujutsu-system.css"
+  ],
+  "scripts": [],
+  "languages": [
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ]
+}
