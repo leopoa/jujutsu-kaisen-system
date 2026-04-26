@@ -13,10 +13,9 @@
       "name": "LEONARDO AMARILHO"
     }
   ],
-  "url": "https://github.com/manus-ai/jujutsu-kaisen-system",  
-  "changelog": "https://github.com/manus-ai/jujutsu-kaisen-system/releases",  
-  "manifest": "https://github.com/manus-ai/jujutsu-kaisen-system/raw/main/system.json",
-  "download": "https://github.com/manus-ai/jujutsu-kaisen-system/archive/refs/heads/main.zip",
+  "url": "https://github.com/leopoa/jujutsu-kaisen-system",    
+  "manifest": "https://github.com/leopoa/jujutsu-kaisen-system/blob/main/system.json",
+  "download": "https://github.com/leopoa/jujutsu-kaisen-system/archive/refs/heads/main.zip",
   "primaryTokenAttribute": "attributes.hp",
   "documentTypes": {
     "Actor": {
