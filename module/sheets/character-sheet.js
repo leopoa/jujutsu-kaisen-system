@@ -50,9 +50,9 @@ export class JujutsuCharacterSheet extends ActorSheet {
       equipped: actor.items.filter(i => i.system.equipped === true)
     };
 
-    const fa = actor.system.attributes.strength_bonus + actor.system.attributes.agility_bonus;
-    const fd = actor.system.attributes.armor_bonus + actor.system.attributes.agility_bonus;
-    const fad = actor.system.attributes.willpower_bonus + actor.system.attributes.agility_bonus;
+    const fa = actor.system.attributes.strength_bonus + actor.system.attributes.agility_bonus + actor.system.attributes.strength + actor.system.attributes.agility;
+    const fd = actor.system.attributes.armor_bonus + actor.system.attributes.agility_bonus + actor.system.attributes.armor + actor.system.attributes.agility;
+    const fad = actor.system.attributes.willpower_bonus + actor.system.attributes.agility_bonus + actor.system.attributes.willpower + actor.system.attributes.agility;
 
     // Calculate HP percentage for the bar
     const hpCurrent = actor.system.health.current || 0;
