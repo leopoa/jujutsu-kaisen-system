@@ -8,7 +8,7 @@ export class JujutsuSpell extends foundry.abstract.TypeDataModel {
     const fields = foundry.data.fields;
     
     return {
-      description: new fields.StringField({ initial: "" }),
+      description: new fields.StringField({ initial: "" }),      
       level: new fields.NumberField({ initial: 1, min: 1, max: 10 }),
       cost: new fields.NumberField({ initial: 0, min: 0 }),
       castingTime: new fields.StringField({ initial: "1 ação" }),
@@ -18,6 +18,7 @@ export class JujutsuSpell extends foundry.abstract.TypeDataModel {
       damage: new fields.NumberField({ initial: 0, min: 0 }),
       damageType: new fields.StringField({ initial: "" }),
       savingThrow: new fields.StringField({ initial: "" }),
+      tecnica: new fields.StringField({ initial: "" }),
       equipped: new fields.BooleanField({ initial: false }),
       school: new fields.StringField({ initial: "" })
     };

@@ -39,6 +39,17 @@ export class JujutsuItemSheet extends ItemSheet {
 
     // Editable fields
     html.find(".editable").on("change", this._onEditableChange.bind(this));
+
+    // Captura a edição do nome no h1 contenteditable
+    html.find('.item-name[contenteditable="true"]').blur(ev => {
+      const header = ev.currentTarget;
+      const newName = header.innerText;
+      if (newName !== this.item.name) {
+        this.item.update({ name: newName });
+      }
+    });
+
+
   }
 
   /**

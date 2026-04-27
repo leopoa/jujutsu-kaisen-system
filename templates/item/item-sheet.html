@@ -48,6 +48,21 @@
       {{/if}}
 
       {{#if (eq type "spell")}}
+
+      <div class="attributes-grid-v2">
+        <div class="field-group">
+          <label>Caminho Ninja</label>
+          <select class="editable" data-field="system.tecnica">
+            <option value="taijutsu" {{#if (eq system.tecnica "taijutsu")}}selected{{/if}}>Taijutsu</option>
+            <option value="ninjutsu" {{#if (eq system.tecnica "ninjutsu")}}selected{{/if}}>Ninjutsu</option>
+            <option value="genjutsu" {{#if (eq system.tecnica "genjutsu")}}selected{{/if}}>Genjutsu</option>            
+            <option value="outro" {{#if (eq system.tecnica "outro")}}selected{{/if}}>Outro</option>            
+          </select>
+        </div>
+      </div>
+      
+      <div class="attributes-grid-v2">
+
         <div class="field-group">
           <label>Level</label>
           <input type="number" class="editable" data-field="system.level" value="{{system.level}}" min="1" max="10" />

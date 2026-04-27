@@ -9,35 +9,417 @@
           </div>
         </div>
       </div>
+
+      <div class="">
+        <div class="" style="margin-top: 10px;">
+          <label>Nome</label>
+          <input type="text" class="editable attribute-input" data-field="system.information.name" value="{{system.information.name}}"  style="width: 250px; text-align: left;"/>
+        </div>
+        <div class="" style="margin-top: 10px;">
+          <label>Vida</label>
+          <input type="text" class="editable attribute-input" data-field="system.health.current" value="{{system.health.current}}" style="width: 50px;"/>&nbsp;\
+          <input type="text" class="editable attribute-input" data-field="system.health.max" value="{{system.health.max}}" style="width: 50px;"/>
+        </div>
+        <div class="" style="margin-top: 10px;">
+          <label>XP</label>
+          <input type="text" class="editable attribute-input" data-field="system.experiencia.current" value="{{system.experiencia.current}}"  style="width: 50px; margin-left: 15px;" />&nbsp;\
+          <input type="text" class="editable attribute-input" data-field="system.experiencia.max" value="{{system.experiencia.max}}"  style="width: 50px;" />
+        </div>
+      </div>  
       
     </div>
 
     <nav class="sheet-tabs tabs" data-group="primary">
-      <button class="item" data-tab="inventory" data-tooltip="Inventário">
-        <i class="fas fa-backpack"></i>
+      
+      <button class="item" data-tab="information" data-tooltip="Informações">
+        <i class="fas fa-id-card"></i>
+      </button>
+
+      <button class="item" data-tab="attributes" data-tooltip="Status">
+        <i class="fas fa-chart-line"></i>
+      </button>
+      
+      <button class="item" data-tab="skill" data-tooltip="Pericia">
+        <i class="fa-solid fa-bars"></i>
       </button>
       <!-- <button class="item" data-tab="combat" data-tooltip="Combate">
         <i class="fas fa-sword"></i>
       </button> -->
-      <button class="item" data-tab="spells" data-tooltip="Magias">
-        <i class="fas fa-wand-magic-sparkles"></i>
+      
+      <button class="item" data-tab="nin" data-tooltip="Ninjutsu">
+        <i class="fa-solid fa-book"></i>
       </button>
-      <button class="item" data-tab="attributes" data-tooltip="Status">
-        <i class="fas fa-chart-line"></i>
+
+      <button class="item" data-tab="tai" data-tooltip="Taijutsu">
+        <i class="fa-solid fa-book-atlas"></i>
       </button>
-      <button class="item" data-tab="information" data-tooltip="Informações">
-        <i class="fas fa-id-card"></i>
+
+      <button class="item" data-tab="gen" data-tooltip="Genjutsu">
+        <i class="fa-solid fa-book-journal-whills"></i>
       </button>
-      <button class="item" data-tab="biography" data-tooltip="Biografia">
-        <i class="fas fa-book"></i>
+
+      <button class="item" data-tab="outras" data-tooltip="Outras">
+        <i class="fa-solid fa-book-tanakh"></i>
       </button>
+      
+      <button class="item" data-tab="inventory" data-tooltip="Inventário">
+        <i class="fas fa-backpack"></i>
+      </button>
+      
+      <button class="item" data-tab="caract" data-tooltip="Caracteristicas">
+        <i class="fa-solid fa-bookmark"></i>
+      </button>
+
+      <button class="item" data-tab="biography" data-tooltip="Notas">
+        <i class="fa-solid fa-book-open"></i>
+      </button>
+
       <!-- <button class="item" data-tab="settings" data-tooltip="Configurações">
         <i class="fas fa-cog"></i>
       </button> -->
+          
     </nav>
   </div>
 
   <section class="sheet-body">
+
+
+
+    <!-- INFORMATION TAB -->
+    <div class="tab" data-tab="information">
+      <div class="info-grid">
+        
+        <div class="info-field">
+          <label>Level</label>
+          <input type="number" class="editable" data-field="system.information.level" value="{{system.information.level}}" />
+        </div>
+        <div class="info-field">
+          <label>Idade</label>
+          <input type="text" class="editable" data-field="system.information.age" value="{{system.information.age}}" />
+        </div>
+        <div class="info-field">
+          <label>Gênero</label>
+          <input type="text" class="editable" data-field="system.information.gender" value="{{system.information.gender}}" />
+        </div>
+        <div class="info-field">
+          <label>Cargo</label>
+          <input type="text" class="editable" data-field="system.information.position" value="{{system.information.position}}" />
+        </div>
+        <div class="info-field">
+          <label>Grau</label>
+          <input type="text" class="editable" data-field="system.information.grade" value="{{system.information.grade}}" />
+        </div>
+        <div class="info-field">
+          <label>Clã</label>
+          <input type="text" class="editable" data-field="system.information.clan" value="{{system.information.clan}}" />
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- ATTRIBUTES TAB -->
+    <div class="tab" data-tab="attributes">
+      <div class="attributes-grid-v3">
+        
+        <div class="status-column">
+          <h3>Atributos</h3>
+          <div class="attribute-row">
+            <label class="attribute-label">Força</label>
+            <input type="number" class="editable attribute-input" data-field="system.attributes.strength" value="{{system.attributes.strength}}" /> 
+            <input type="number" class="editable attribute-input" data-field="system.attributes.strength_bonus" value="{{system.attributes.strength_bonus}}" /> 
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Habilidade</label>
+            <input type="number" class="editable attribute-input" data-field="system.attributes.agility" value="{{system.attributes.agility}}" />
+            <input type="number" class="editable attribute-input" data-field="system.attributes.agility_bonus" value="{{system.attributes.agility_bonus}}" />
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Resistência</label>
+            <input type="number" class="editable attribute-input" data-field="system.attributes.vigor" value="{{system.attributes.vigor}}" /> 
+            <input type="number" class="editable attribute-input" data-field="system.attributes.vigor_bonus" value="{{system.attributes.vigor_bonus}}" />
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Armadura</label>
+            <input type="number" class="editable attribute-input" data-field="system.attributes.armor" value="{{system.attributes.armor}}" /> 
+            <input type="number" class="editable attribute-input" data-field="system.attributes.armor_bonus" value="{{system.attributes.armor_bonus}}" />
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Poder de Fogo</label>
+            <input type="number" class="editable attribute-input" data-field="system.attributes.willpower" value="{{system.attributes.willpower}}" /> 
+            <input type="number" class="editable attribute-input" data-field="system.attributes.willpower_bonus" value="{{system.attributes.willpower_bonus}}" />
+          </div>
+
+
+        </div>
+        
+        <div class="status-column">
+          <h3>COMBATE</h3>
+          <div class="attribute-row">
+            <label class="attribute-label">Força de Ataque</label>
+            <input type="number" class="editable attribute-input" data-field="system.fa" value="{{system.fa}}" readonly/>            
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Força de Defesa</label>
+            <input type="number" class="editable attribute-input" data-field="system.fd" value="{{system.fd}}" readonly/>
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Força Atq. Distância</label>
+            <input type="number" class="editable attribute-input" data-field="system.fad" value="{{system.fad}}" readonly/>
+          </div>
+        </div>
+        
+        <div class="status-column">
+          <h3>CAMINHOS NINJA</h3>
+          <div class="attribute-row">
+            <label class="attribute-label">Taijutsu</label>
+            <input type="number" class="editable attribute-input" data-field="system.taijutsu" value="{{system.taijutsu}}" />
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Ninjutsu</label>
+            <input type="number" class="editable attribute-input" data-field="system.ninjutsu" value="{{system.ninjutsu}}" />
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Genjutsu</label>
+            <input type="number" class="editable attribute-input" data-field="system.genjutsu" value="{{system.genjutsu}}" />
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Controle de Chakra</label>
+            <input type="number" class="editable attribute-input" data-field="system.chakra" value="{{system.chakra}}" />
+          </div>          
+        </div>
+      
+      
+      </div>
+    </div>
+
+
+
+
+     <!-- SKILL  TAB -->
+    <div class="tab" data-tab="skill">
+      <div class="attributes-grid-v3">
+        
+        <div class="status-column">
+          
+          <div class="attribute-row">
+            <label class="attribute-label">Tratamento</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.tratamento" value="{{system.skill.tratamento}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Treinamento</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.treinamento" value="{{system.skill.treinamento}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Veterinária</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.veterinaria" value="{{system.skill.veterinaria}}" />             
+          </div>
+
+          <div class="attribute-row">
+            <label class="attribute-label">Ataução</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.atuacao" value="{{system.skill.atuacao}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Inst. Musicais</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.veterinaria" value="{{system.skill.veterinaria}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Prestidigitacao</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.prestidigitacao" value="{{system.skill.prestidigitacao}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Fotografia</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.fotografia" value="{{system.skill.fotografia}}" />             
+          </div>
+
+
+          <div class="attribute-row">
+            <label class="attribute-label">Biologia</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.biologia" value="{{system.skill.biologia}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Ciências Proibidas</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.proibidas" value="{{system.skill.proibidas}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Geografia</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.geografia" value="{{system.skill.geografia}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Meterologia</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.meterologia" value="{{system.skill.meterologia}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Psicologia</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.psicologia" value="{{system.skill.psicologia}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Outras Especializações</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.especializacao" value="{{system.skill.especializacao}}" />             
+          </div>
+
+          <div class="attribute-row">
+            <label class="attribute-label">Prontidão</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.prontidao" value="{{system.skill.prontidao}}" />             
+          </div>
+
+        </div>
+        
+        <div class="status-column">
+          
+          <div class="attribute-row">
+            <label class="attribute-label">Armadilha</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.armadilha" value="{{system.skill.armadilha}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Arrombamento</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.arrombamento" value="{{system.skill.arrombamento}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Furtividade</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.furtividade" value="{{system.skill.furtividade}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Falsificação</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.falsificacao" value="{{system.skill.falsificacao}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Intimidação</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.intimidacao" value="{{system.skill.intimidacao}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Punga</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.punga" value="{{system.skill.punga}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Rastreio</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.rastreio" value="{{system.skill.rastreio}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Acrobacia</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.acrobacia" value="{{system.skill.acrobacia}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Alpinismo</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.alpinismo" value="{{system.skill.alpinismo}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Arquearia</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.arquearia" value="{{system.skill.arquearia}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Corrida</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.corrida" value="{{system.skill.corrida}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Jogos</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.jogos" value="{{system.skill.jogos}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Mergulho</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.mergulho" value="{{system.skill.mergulho}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Natação</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.natacao" value="{{system.skill.natacao}}" />             
+          </div>
+          
+          <div class="attribute-row">
+            <label class="attribute-label">Pesca</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.pesca" value="{{system.skill.pesca}}" />             
+          </div>
+          
+
+
+
+
+
+
+        </div>    
+      
+
+         <div class="status-column">
+
+
+          <div class="attribute-row">
+            <label class="attribute-label">Hipnose</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.hipnose" value="{{system.skill.hipnose}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Interrogatorio</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.interrogatorio" value="{{system.skill.interrogatorio}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Lábia</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.labia" value="{{system.skill.labia}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Sedução</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.seducao" value="{{system.skill.seducao}}" />             
+          </div>
+          
+
+          <div class="attribute-row">
+            <label class="attribute-label">Computação</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.computacao" value="{{system.skill.computacao}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Compreensão</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.compreensao" value="{{system.skill.compreensao}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Eletrônica</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.eletronica" value="{{system.skill.eletronica}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Engenharia</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.engenharia" value="{{system.skill.engenharia}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Mecanica</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.mecanica" value="{{system.skill.mecanica}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Pilotagem</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.pilotagem" value="{{system.skill.pilotagem}}" />             
+          </div>
+
+          <div class="attribute-row">
+            <label class="attribute-label">Cirurgia</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.cirurgia" value="{{system.skill.cirurgia}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Dignose</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.dignose" value="{{system.skill.dignose}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Prim. Socorros</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.socorro" value="{{system.skill.socorro}}" />             
+          </div>
+          <div class="attribute-row">
+            <label class="attribute-label">Psiquiatria</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.psiquiatria" value="{{system.skill.psiquiatria}}" />             
+          </div>
+
+
+          <div class="attribute-row">
+            <label class="attribute-label">Navegação</label>
+            <input type="number" class="editable attribute-input" data-field="system.skill.navegacao" value="{{system.skill.navegacao}}" />             
+          </div>
+          
+          
+
+
+
+
+        </div>    
+      
+      </div>
+    </div>
+
+
+
     <!-- INVENTORY TAB -->
     <div class="tab" data-tab="inventory">
       <div class="inventory-header">
@@ -112,17 +494,105 @@
       </div>
     </div>
 
-    <!-- SPELLS TAB -->
-    <div class="tab" data-tab="spells">
+    <!-- taijutsu TAB -->
+    <div class="tab" data-tab="tai">
       <div class="spells-header">
-        <h2>Magias</h2>
-        <button type="button" class="add-item-btn" data-item-type="spell">
+        <h2>Taijutsu</h2>
+        <button type="button" class="add-spell-tai-btn" data-item-type="spell">
           <i class="fas fa-plus"></i> Adicionar Magia
         </button>
       </div>
 
       <div class="item-list spells-list">
-        {{#each items.spells}}
+        {{#each items.taijutsu}}
+          <div class="item-row spell" data-item-id="{{this._id}}">
+            <div class="item-icon">
+              <img src="{{this.img}}" alt="{{this.name}}" />
+            </div>
+            <div class="item-info">
+              <h4 class="item-name">{{this.name}}</h4>
+              <p class="spell-level">Level {{this.system.level}}</p>
+            </div>
+            
+            <div class="item-actions">
+              <!-- <button type="button" class="item-equip" title="Equipar">
+                <i class="fas {{#if this.system.equipped}}fa-check-circle{{else}}fa-circle{{/if}}"></i>
+              </button> -->
+              <button type="button" class="item-edit" title="Editar">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button type="button" class="item-delete" title="Remover">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        {{else}}
+          <div class="empty-state">
+            <p>Nenhuma magia adicionada</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+ 
+
+
+
+
+
+    <!-- ninjutsu TAB -->
+    <div class="tab" data-tab="nin">
+      <div class="spells-header">
+        <h2>Ninjutsu</h2>
+        <button type="button" class="add-spell-nin-btn" data-item-type="spell">
+          <i class="fas fa-plus"></i> Adicionar Magia
+        </button>
+      </div>
+
+      <div class="item-list spells-list">
+        {{#each items.ninjutsu}}
+          <div class="item-row spell" data-item-id="{{this._id}}">
+            <div class="item-icon">
+              <img src="{{this.img}}" alt="{{this.name}}" />
+            </div>
+            <div class="item-info">
+              <h4 class="item-name">{{this.name}}</h4>
+              <p class="spell-level">Level {{this.system.level}}</p>
+            </div>
+            
+            <div class="item-actions">
+              <!-- <button type="button" class="item-equip" title="Equipar">
+                <i class="fas {{#if this.system.equipped}}fa-check-circle{{else}}fa-circle{{/if}}"></i>
+              </button> -->
+              <button type="button" class="item-edit" title="Editar">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button type="button" class="item-delete" title="Remover">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        {{else}}
+          <div class="empty-state">
+            <p>Nenhuma magia adicionada</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+ 
+
+
+
+    <!-- genjutsu TAB -->
+    <div class="tab" data-tab="gen">
+      <div class="spells-header">
+        <h2>Genjutsu</h2>
+        <button type="button" class="add-spell-gen-btn" data-item-type="spell">
+          <i class="fas fa-plus"></i> Adicionar Magia
+        </button>
+      </div>
+
+      <div class="item-list spells-list">
+        {{#each items.genjutsu}}
           <div class="item-row spell" data-item-id="{{this._id}}">
             <div class="item-icon">
               <img src="{{this.img}}" alt="{{this.name}}" />
@@ -152,86 +622,69 @@
       </div>
     </div>
 
-    <!-- ATTRIBUTES TAB -->
-    <div class="tab" data-tab="attributes">
-      <div class="info-grid">
-        <div class="info-field">
-          <label class="attribute-label">Pontos de Vida</label>
-          <input type="number" class="editable attribute-input" data-field="system.health.max" value="{{system.health.max}}" /> 
-        </div>
-        <div class="info-field">
-          <label class="attribute-label">Força</label>
-          <input type="number" class="editable attribute-input" data-field="system.attributes.strength" value="{{system.attributes.strength}}" />
-        </div>
-        <div class="info-field">
-          <label class="attribute-label">Agilidade</label>
-          <input type="number" class="editable attribute-input" data-field="system.attributes.agility" value="{{system.attributes.agility}}" />
-        </div>
-        <div class="info-field">
-          <label class="attribute-label">Vigor</label>
-          <input type="number" class="editable attribute-input" data-field="system.attributes.vigor" value="{{system.attributes.vigor}}" />
-        </div>
-        <div class="info-field">
-          <label class="attribute-label">Destreza</label>
-          <input type="number" class="editable attribute-input" data-field="system.attributes.dexterity" value="{{system.attributes.dexterity}}" />
-        </div>
-        <div class="info-field">
-          <label class="attribute-label">Percepção</label>
-          <input type="number" class="editable attribute-input" data-field="system.attributes.perception" value="{{system.attributes.perception}}" />
-        </div>
-        <div class="info-field">
-          <label class="attribute-label">Inteligência</label>
-          <input type="number" class="editable attribute-input" data-field="system.attributes.intelligence" value="{{system.attributes.intelligence}}" />
-        </div>
-        <div class="info-field">
-          <label class="attribute-label">Jujutsu</label>
-          <input type="number" class="editable attribute-input" data-field="system.attributes.jujutsu" value="{{system.attributes.jujutsu}}" />
-        </div>
-        <div class="info-field">
-          <label class="attribute-label">Vontade</label>
-          <input type="number" class="editable attribute-input" data-field="system.attributes.willpower" value="{{system.attributes.willpower}}" />
-        </div>
+
+    <!-- outro TAB -->
+    <div class="tab" data-tab="outras">
+      <div class="spells-header">
+        <h2>Outras Magias</h2>
+        <button type="button" class="add-spell-outro-btn" data-item-type="spell">
+          <i class="fas fa-plus"></i> Adicionar Magia
+        </button>
+      </div>
+
+      <div class="item-list spells-list">
+        {{#each items.outro}}
+          <div class="item-row spell" data-item-id="{{this._id}}">
+            <div class="item-icon">
+              <img src="{{this.img}}" alt="{{this.name}}" />
+            </div>
+            <div class="item-info">
+              <h4 class="item-name">{{this.name}}</h4>
+              <p class="spell-level">Level {{this.system.level}}</p>
+            </div>
+            
+            <div class="item-actions">
+              <!-- <button type="button" class="item-equip" title="Equipar">
+                <i class="fas {{#if this.system.equipped}}fa-check-circle{{else}}fa-circle{{/if}}"></i>
+              </button> -->
+              <button type="button" class="item-edit" title="Editar">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button type="button" class="item-delete" title="Remover">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        {{else}}
+          <div class="empty-state">
+            <p>Nenhuma magia adicionada</p>
+          </div>
+        {{/each}}
       </div>
     </div>
 
-    <!-- INFORMATION TAB -->
-    <div class="tab" data-tab="information">
-      <div class="info-grid">
-        <div class="info-field">
-          <label>Nome</label>
-          <input type="text" class="editable" data-field="system.information.name" value="{{system.information.name}}" />
-        </div>
-        <div class="info-field">
-          <label>Level</label>
-          <input type="number" class="editable" data-field="system.information.level" value="{{system.information.level}}" />
-        </div>
-        <div class="info-field">
-          <label>Idade</label>
-          <input type="text" class="editable" data-field="system.information.age" value="{{system.information.age}}" />
-        </div>
-        <div class="info-field">
-          <label>Gênero</label>
-          <input type="text" class="editable" data-field="system.information.gender" value="{{system.information.gender}}" />
-        </div>
-        <div class="info-field">
-          <label>Cargo</label>
-          <input type="text" class="editable" data-field="system.information.position" value="{{system.information.position}}" />
-        </div>
-        <div class="info-field">
-          <label>Grau</label>
-          <input type="text" class="editable" data-field="system.information.grade" value="{{system.information.grade}}" />
-        </div>
-        <div class="info-field full-width">
-          <label>Clã</label>
-          <input type="text" class="editable" data-field="system.information.clan" value="{{system.information.clan}}" />
-        </div>
-      </div>
-    </div>
+    
 
-    <!-- BIOGRAPHY TAB -->
-    <div class="tab" data-tab="biography">
+    <!-- CARACTERISTICA TAB -->
+    <div class="tab" data-tab="caract">
+
       <div class="biography-section">
-        <h2>Biografia</h2>
+        <h2>Vantagem</h2>
+        <textarea class="vantagem-editor" data-field="system.vantagem" placeholder="Escreva vantagem aqui...">{{system.vantagem}}</textarea>
+      </div>
+
+      <div class="biography-section">
+        <h2>Desvantagem</h2>
+        <textarea class="desvantagem-editor" data-field="system.desvantagem" placeholder="Escreva desvantagem aqui...">{{system.desvantagem}}</textarea>
+      </div>
+
+    </div>
+
+      
+    <div class="tab" data-tab="biography">
+  
+      <div class="biography-section">
+        <h2>Notas</h2>
         <textarea class="biography-editor" data-field="system.biography" placeholder="Escreva a história do seu personagem aqui...">{{system.biography}}</textarea>
       </div>
     </div>

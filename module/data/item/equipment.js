@@ -8,7 +8,7 @@ export class JujutsuEquipment extends foundry.abstract.TypeDataModel {
     const fields = foundry.data.fields;
     
     return {
-      description: new fields.StringField({ initial: "" }),
+      description: new fields.StringField({ initial: "" }),      
       quantity: new fields.NumberField({ initial: 1, min: 1 }),
       weight: new fields.NumberField({ initial: 0, min: 0 }),
       value: new fields.NumberField({ initial: 0, min: 0 }),
