@@ -108,6 +108,12 @@ export class JujutsuCharacter extends foundry.abstract.TypeDataModel {
 
       }),
 
+      
+      pt_chakra: new fields.SchemaField({
+        current: new fields.NumberField({ initial: 0, min: 0 }),
+        max: new fields.NumberField({ initial: 1, min: 1 })
+      }),
+
 
       // Health and Resources
       health: new fields.SchemaField({

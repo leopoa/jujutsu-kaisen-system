@@ -1,7 +1,7 @@
 <form class="jujutsu-character-sheet" autocomplete="off">
   <div class="sheet-header">
     <div class="header-top">
-      <div class="avatar-section">
+      <div class="avatar-section" style="margin-top: 10px;">
         <div class="avatar-container">
           <img src="{{actor.img}}" alt="Avatar" class="avatar-image" title="Clique para mudar o avatar" />
           <div class="level-badge">
@@ -11,18 +11,23 @@
       </div>
 
       <div class="">
-        <div class="" style="margin-top: 10px;">
+        <div class="" style="margin-top: 5px;">
           <label>Nome</label>
-          <input type="text" class="editable attribute-input" data-field="system.information.name" value="{{system.information.name}}"  style="width: 250px; text-align: left;"/>
+          <input type="text" class="editable attribute-input" data-field="system.information.name" value="{{system.information.name}}"  style="width: 250px; text-align: left; margin-left: 15px;"/>
         </div>
-        <div class="" style="margin-top: 10px;">
+        <div class="" style="margin-top: 5px;">
           <label>Vida</label>
-          <input type="text" class="editable attribute-input" data-field="system.health.current" value="{{system.health.current}}" style="width: 50px;"/>&nbsp;\
+          <input type="text" class="editable attribute-input" data-field="system.health.current" value="{{system.health.current}}" style="width: 50px; margin-left: 15px;"/>&nbsp;\
           <input type="text" class="editable attribute-input" data-field="system.health.max" value="{{system.health.max}}" style="width: 50px;"/>
         </div>
-        <div class="" style="margin-top: 10px;">
+        <div class="" style="margin-top: 5px;">
+          <label>Chakra</label>
+          <input type="text" class="editable attribute-input" data-field="system.pt_chakra.current" value="{{system.pt_chakra.current}}"  style="width: 50px;" />&nbsp;\
+          <input type="text" class="editable attribute-input" data-field="system.pt_chakra.max" value="{{system.pt_chakra.max}}"  style="width: 50px;" />
+        </div>
+        <div class="" style="margin-top: 5px;">
           <label>XP</label>
-          <input type="text" class="editable attribute-input" data-field="system.experiencia.current" value="{{system.experiencia.current}}"  style="width: 50px; margin-left: 15px;" />&nbsp;\
+          <input type="text" class="editable attribute-input" data-field="system.experiencia.current" value="{{system.experiencia.current}}"  style="width: 50px; margin-left: 30px;" />&nbsp;\
           <input type="text" class="editable attribute-input" data-field="system.experiencia.max" value="{{system.experiencia.max}}"  style="width: 50px;" />
         </div>
       </div>  
