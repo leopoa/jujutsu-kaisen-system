@@ -11,16 +11,7 @@ A ficha de personagem oferece uma interface intuitiva com múltiplas abas:
 - **Inventário**: Gerencie equipamentos, itens e armas. Suporta drag-and-drop do Foundry para adicionar itens.
 - **Combate**: Visualize todos os itens equipados do personagem em um único lugar.
 - **Magias**: Gerencie técnicas de Jujutsu e habilidades mágicas com níveis e custos.
-- **Status**: Visualize e edite os 8 atributos principais:
-  - Força
-  - Agilidade
-  - Vigor
-  - Destreza
-  - Percepção
-  - Inteligência
-  - Jujutsu
-  - Vontade
-
+- **Status**: Visualize e edite os atributos
 - **Informações**: Dados básicos do personagem (nome, level, idade, gênero, cargo, grau, clã).
 - **Biografia**: Editor de texto para notas e história do personagem.
 - **Configurações**: Ajustes gerais da ficha.
